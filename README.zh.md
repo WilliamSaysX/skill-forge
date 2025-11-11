@@ -144,32 +144,6 @@ skill-forge 智能管理路径：
 - **`package_skill.py`** - 验证并打包 skills
 - **`cleanup_materials.py`** - 清理临时材料
 
-## 示例
-
-### 获取 GitHub 仓库
-```bash
-python scripts/fetch_source.py --git https://github.com/user/repo
-```
-
-### 获取文档（自动检测 llms.txt）
-```bash
-# 如果有 llms.txt 会自动检测并推荐
-python scripts/fetch_source.py --docs https://docs.example.com --name example
-```
-
-### 获取 PDF 文档
-```bash
-python scripts/fetch_source.py --docs https://example.com/manual.pdf --name manual
-```
-
-### 组合使用（文档 + 仓库）
-```bash
-python scripts/fetch_source.py \
-  --git https://github.com/user/repo \
-  --docs https://docs.example.com \
-  --name combo
-```
-
 ## 贡献
 
 欢迎 Issues 和 Pull Requests！请确保：
@@ -184,6 +158,7 @@ python scripts/fetch_source.py \
 
 ## 致谢
 
+- 基于 Anthropic 官方 Claude Code 模板中的 [skill-creator](https://modelcontextprotocol.io/examples#skill-creator) 构建
 - 灵感来自 [Skill Seekers](https://github.com/QuantGeekDev/skill-seekers)
 - 为 [Claude Code](https://claude.com/claude-code) 构建
 - 使用 [markitdown](https://github.com/microsoft/markitdown) 进行文档转换

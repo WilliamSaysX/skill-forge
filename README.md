@@ -144,32 +144,6 @@ Full documentation is available in SKILL.md and reference files:
 - **`package_skill.py`** - Validate and package skills
 - **`cleanup_materials.py`** - Clean up temporary materials
 
-## Examples
-
-### Fetch GitHub Repository
-```bash
-python scripts/fetch_source.py --git https://github.com/user/repo
-```
-
-### Fetch Documentation with llms.txt Detection
-```bash
-# Auto-detects and recommends llms.txt if available
-python scripts/fetch_source.py --docs https://docs.example.com --name example
-```
-
-### Fetch PDF Document
-```bash
-python scripts/fetch_source.py --docs https://example.com/manual.pdf --name manual
-```
-
-### Combined (Docs + Repo)
-```bash
-python scripts/fetch_source.py \
-  --git https://github.com/user/repo \
-  --docs https://docs.example.com \
-  --name combo
-```
-
 ## Contributing
 
 Issues and pull requests are welcome! Please ensure:
@@ -184,6 +158,7 @@ See [LICENSE.txt](LICENSE.txt) for complete terms.
 
 ## Acknowledgments
 
+- Built upon [skill-creator](https://modelcontextprotocol.io/examples#skill-creator) from Anthropic's official Claude Code templates
 - Inspired by [Skill Seekers](https://github.com/QuantGeekDev/skill-seekers)
 - Built for [Claude Code](https://claude.com/claude-code)
 - Uses [markitdown](https://github.com/microsoft/markitdown) for document conversion
