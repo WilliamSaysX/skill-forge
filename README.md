@@ -32,7 +32,7 @@ skill-name/
 
 ### Option 1: Download Release (Recommended)
 
-1. Download `skill-forge.zip` from [Releases](https://github.com/USERNAME/skill-forge/releases)
+1. Download `skill-forge.zip` from [Releases](https://github.com/WilliamSaysX/skill-forge/releases)
 2. Extract to your skills directory:
    ```bash
    # For global skills (available everywhere)
@@ -46,10 +46,10 @@ skill-name/
 
 ```bash
 # Global installation
-git clone https://github.com/USERNAME/skill-forge ~/.claude/skills/skill-forge
+git clone https://github.com/WilliamSaysX/skill-forge ~/.claude/skills/skill-forge
 
 # Project installation
-git clone https://github.com/USERNAME/skill-forge .claude/skills/skill-forge
+git clone https://github.com/WilliamSaysX/skill-forge .claude/skills/skill-forge
 ```
 
 ## Requirements

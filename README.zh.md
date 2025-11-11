@@ -32,7 +32,7 @@ skill-name/
 
 ### 方式 1：下载 Release（推荐）
 
-1. 从 [Releases](https://github.com/USERNAME/skill-forge/releases) 下载 `skill-forge.zip`
+1. 从 [Releases](https://github.com/WilliamSaysX/skill-forge/releases) 下载 `skill-forge.zip`
 2. 解压到你的 skills 目录：
    ```bash
    # 全局 skills（在任何地方可用）
@@ -46,10 +46,10 @@ skill-name/
 
 ```bash
 # 全局安装
-git clone https://github.com/USERNAME/skill-forge ~/.claude/skills/skill-forge
+git clone https://github.com/WilliamSaysX/skill-forge ~/.claude/skills/skill-forge
 
 # 项目安装
-git clone https://github.com/USERNAME/skill-forge .claude/skills/skill-forge
+git clone https://github.com/WilliamSaysX/skill-forge .claude/skills/skill-forge
 ```
 
 ## 环境要求
