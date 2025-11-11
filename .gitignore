@@ -1,0 +1,20 @@
+# Python bytecode cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# macOS
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+
+# Temporary files
+*.tmp
+*.bak
+*~
+
+# Test outputs (if we ever add tests back)
+.pytest_cache/
+*.coverage
