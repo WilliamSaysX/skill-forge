@@ -71,9 +71,10 @@ You: Create a skill from https://github.com/joaomdmoura/crewAI
 
 Claude will:
 1. Auto-detect it's a GitHub repo
-2. Clone the repository
-3. Guide you through creating a skill
-4. Package it as `crewai.zip`
+2. Clone repository to temp-materials/
+3. Guide you through creating the skill
+4. Install to ~/.claude/skills/crewai/ (ready to use!)
+5. Optionally package as crewai.zip for sharing
 
 ### Example 2: Create Skill from Documentation
 
@@ -83,9 +84,10 @@ You: Turn https://docs.crewai.com/ into a skill
 
 Claude will:
 1. Check for llms.txt (10x faster)
-2. Fetch documentation
+2. Fetch documentation to temp-materials/
 3. Help organize into skill structure
-4. Create distributable package
+4. Install to skills directory (ready to use!)
+5. Optionally create .zip for distribution
 
 ### Example 3: Create Skill from PDF
 
@@ -96,16 +98,18 @@ You: Create a skill from /path/to/manual.pdf
 Claude will:
 1. Convert PDF to markdown
 2. Guide skill creation
-3. Bundle resources
+3. Install to skills directory (ready to use!)
+4. Optionally package for sharing
 
 ## Workflow Overview
 
-1. **Fetch Materials** - Automatically fetch from GitHub/docs/PDF
+1. **Fetch Materials** - Automatically fetch from GitHub/docs/PDF to temp-materials/
 2. **Understand Purpose** - Clarify skill goals through examples
 3. **Plan Contents** - Identify scripts, references, assets to bundle
-4. **Initialize Skill** - Create skill directory structure
+4. **Initialize Skill** - Create skill in ~/.claude/skills/ or .claude/skills/
 5. **Edit Skill** - Implement resources and write SKILL.md
-6. **Package** - Validate and create distributable .zip
+6. **✅ Ready to Use** - Skill is installed and available immediately
+7. **Package** - (Optional) Create .zip for sharing with others
 
 ## Supported Source Types
 

@@ -71,9 +71,10 @@ git clone https://github.com/USERNAME/skill-forge .claude/skills/skill-forge
 
 Claude 会：
 1. 自动检测这是 GitHub 仓库
-2. 克隆仓库
+2. 克隆仓库到 temp-materials/
 3. 引导你创建 skill
-4. 打包为 `crewai.zip`
+4. 安装到 ~/.claude/skills/crewai/（马上可用！）
+5. 可选：打包为 crewai.zip 用于分享
 
 ### 示例 2：从文档创建 Skill
 
@@ -83,9 +84,10 @@ Claude 会：
 
 Claude 会：
 1. 检查 llms.txt（速度快 10 倍）
-2. 获取文档
+2. 获取文档到 temp-materials/
 3. 帮助组织成 skill 结构
-4. 创建可分发的包
+4. 安装到 skills 目录（马上可用！）
+5. 可选：创建 .zip 用于分发
 
 ### 示例 3：从 PDF 创建 Skill
 
@@ -96,16 +98,18 @@ Claude 会：
 Claude 会：
 1. 将 PDF 转换为 markdown
 2. 引导 skill 创建
-3. 打包资源
+3. 安装到 skills 目录（马上可用！）
+4. 可选：打包用于分享
 
 ## 工作流程概览
 
-1. **获取材料** - 自动从 GitHub/文档/PDF 获取
+1. **获取材料** - 自动从 GitHub/文档/PDF 获取到 temp-materials/
 2. **理解目的** - 通过示例明确 skill 目标
 3. **规划内容** - 识别要打包的脚本、参考文档、资源
-4. **初始化 Skill** - 创建 skill 目录结构
+4. **初始化 Skill** - 创建 skill 到 ~/.claude/skills/ 或 .claude/skills/
 5. **编辑 Skill** - 实现资源并编写 SKILL.md
-6. **打包** - 验证并创建可分发的 .zip
+6. **✅ 可以使用** - Skill 已安装，马上可用
+7. **打包** -（可选）创建 .zip 用于分享给他人
 
 ## 支持的源类型
 
