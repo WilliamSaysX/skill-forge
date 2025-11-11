@@ -243,6 +243,16 @@ scripts/fetch_source.py --git <url> --docs <url> --name combo
 
 **Goal:** Clearly understand how the skill will be used through concrete examples.
 
+**⚡ Fast Track for Popular Frameworks:**
+
+If user mentions a popular framework by name (React, Vue, FastAPI, Django, Flask, etc.):
+
+1. **Check popular-frameworks.md** - Auto-load framework info (docs URL, GitHub, llms.txt status)
+2. **Confirm briefly** - Ask ONE simple question: "Creating a React skill with official docs + GitHub repo. Should it focus on specific aspects (hooks, components, etc.) or general purpose?"
+3. **Skip detailed questioning** - Don't ask multiple questions. Move quickly to Step 0 (fetch).
+
+**For Custom/Unknown Skills:**
+
 **Process:**
 - Ask users for specific use cases
 - Generate example scenarios for validation
