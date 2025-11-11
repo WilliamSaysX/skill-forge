@@ -329,9 +329,25 @@ scripts/init_skill.py <skill-name> --path <user-chosen-path>
 
 📖 See [workflow-guide.md#step-4](references/workflow-guide.md#step-4-edit-the-skill) for writing guidelines and examples.
 
-### Step 5: Packaging a Skill
+### Step 5: Packaging a Skill (Optional - For Sharing Only)
 
-**Goal:** Validate and package skill into distributable .zip file.
+**Important:** After Step 4, the skill is already installed and ready to use! Packaging is only needed if the user wants to share it with others.
+
+**When to Offer Packaging:**
+
+After completing Step 4, inform the user:
+
+```
+✅ Skill created and installed successfully!
+📁 Location: ~/.claude/skills/crewai/
+🎉 The skill is ready to use immediately!
+
+📦 Would you like to package it as a .zip for sharing with others? (Optional)
+```
+
+**Only package if user confirms they want to share.**
+
+**Goal:** Validate and package skill into distributable .zip file for sharing.
 
 **Usage:**
 ```bash
@@ -351,8 +367,9 @@ scripts/package_skill.py <path/to/skill-folder> ./dist
 Proactively inform user and suggest cleanup:
 
 ```
-✅ Skill created successfully!
+✅ Skill packaged successfully!
 📦 Package: ~/.claude/skills/crewai/crewai.zip
+📁 Installed: ~/.claude/skills/crewai/ (ready to use)
 📁 Source materials: ~/skill-materials/crewAI/ (245 MB) [global mode]
 
 💡 Clean up materials:
