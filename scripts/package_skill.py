@@ -65,7 +65,8 @@ def package_skill(skill_path, output_dir=None):
     zip_filename = output_path / f"{skill_name}.zip"
 
     # Files to exclude from packaging (GitHub-specific files)
-    exclude_files = {'README.md', '.gitignore', '.git'}
+    exclude_files = {'README.md', 'README.zh.md', 'LICENSE.txt', '.gitignore', '.git'}
+    exclude_extensions = {'.zip'}  # Exclude all zip files (prevent recursive packaging)
 
     # Create the zip file
     try:
@@ -73,8 +74,10 @@ def package_skill(skill_path, output_dir=None):
             # Walk through the skill directory
             for file_path in skill_path.rglob('*'):
                 if file_path.is_file():
-                    # Skip excluded files
-                    if file_path.name in exclude_files or any(parent.name in exclude_files for parent in file_path.parents):
+                    # Skip excluded files and extensions
+                    if (file_path.name in exclude_files or
+                        file_path.suffix in exclude_extensions or
+                        any(parent.name in exclude_files for parent in file_path.parents)):
                         print(f"  Skipped: {file_path.relative_to(skill_path.parent)}")
                         continue
 
