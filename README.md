@@ -63,23 +63,7 @@ git clone https://github.com/WilliamSaysX/skill-forge .claude/skills/skill-forge
 
 ## Quick Start
 
-### Example 1: Create Skill by Framework Name (Easiest!)
-
-For 13 popular frameworks (React, Vue, FastAPI, etc.), just mention the name:
-
-```
-You: Create a React skill
-```
-
-Claude will:
-1. Auto-find React documentation and GitHub repo
-2. Fetch materials and guide you through creation
-3. Install to ~/.claude/skills/react/ (ready to use!)
-4. Optionally package for sharing
-
-**Supported frameworks**: React, Vue, Svelte, Next.js, FastAPI, Django, Flask, Tailwind CSS, LangChain, CrewAI, Godot, Vite, and more.
-
-### Example 2: Create Skill from GitHub Repository
+### Example 1: Create Skill from GitHub Repository
 
 ```
 You: Create a skill from https://github.com/joaomdmoura/crewAI
@@ -92,7 +76,7 @@ Claude will:
 4. Install to ~/.claude/skills/crewai/ (ready to use!)
 5. Optionally package as crewai.zip for sharing
 
-### Example 3: Create Skill from Documentation
+### Example 2: Create Skill from Documentation
 
 ```
 You: Turn https://docs.crewai.com/ into a skill
@@ -105,7 +89,7 @@ Claude will:
 4. Install to skills directory (ready to use!)
 5. Optionally create .zip for distribution
 
-### Example 4: Create Skill from PDF
+### Example 3: Create Skill from PDF
 
 ```
 You: Create a skill from /path/to/manual.pdf

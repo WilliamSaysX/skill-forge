@@ -63,23 +63,7 @@ git clone https://github.com/WilliamSaysX/skill-forge .claude/skills/skill-forge
 
 ## 快速开始
 
-### 示例 1：通过框架名创建 Skill（最简单！）
-
-对于 13 个流行框架（React、Vue、FastAPI 等），直接说名字就行：
-
-```
-你：创建一个 React skill
-```
-
-Claude 会：
-1. 自动查找 React 文档和 GitHub 仓库
-2. 获取材料并引导你完成创建
-3. 安装到 ~/.claude/skills/react/（马上可用！）
-4. 可选：打包用于分享
-
-**支持的框架**：React、Vue、Svelte、Next.js、FastAPI、Django、Flask、Tailwind CSS、LangChain、CrewAI、Godot、Vite 等。
-
-### 示例 2：从 GitHub 仓库创建 Skill
+### 示例 1：从 GitHub 仓库创建 Skill
 
 ```
 你：从 https://github.com/joaomdmoura/crewAI 创建一个 skill
@@ -92,7 +76,7 @@ Claude 会：
 4. 安装到 ~/.claude/skills/crewai/（马上可用！）
 5. 可选：打包为 crewai.zip 用于分享
 
-### 示例 3：从文档创建 Skill
+### 示例 2：从文档创建 Skill
 
 ```
 你：把 https://docs.crewai.com/ 转成一个 skill
@@ -105,7 +89,7 @@ Claude 会：
 4. 安装到 skills 目录（马上可用！）
 5. 可选：创建 .zip 用于分发
 
-### 示例 4：从 PDF 创建 Skill
+### 示例 3：从 PDF 创建 Skill
 
 ```
 你：从 /path/to/manual.pdf 创建一个 skill
