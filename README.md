@@ -171,3 +171,12 @@ See [LICENSE.txt](LICENSE.txt) for complete terms.
 ---
 
 **Made for AI agents, by humans (with AI assistance)**
+
+## Join the Community
+If you find Skill Forge helpful and would like to:
+*   Engage in deeper discussions with me about AI Agents and advanced Claude Skills;
+*   Get exclusive content, practical case studies, and source code deep-dives on LLM applications;
+*   Connect with a group of peers who are also at the forefront of exploring AI applications;
+You are welcome to join my private community, "William's AI Club," and ignite the fire of AI with hundreds of fellow explorers.
+
+![William's AI Club Community](assets/zsxq_qrcode.JPG)

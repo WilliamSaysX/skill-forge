@@ -66,7 +66,7 @@ def package_skill(skill_path, output_dir=None):
 
     # Files to exclude from packaging (GitHub-specific files)
     exclude_files = {'README.md', 'README.zh.md', 'LICENSE.txt', '.gitignore', '.git', '.DS_Store'}
-    exclude_dirs = {'__pycache__'}  # Exclude directories
+    exclude_dirs = {'__pycache__', 'assets'}  # Exclude directories
     exclude_extensions = {'.zip', '.pyc'}  # Exclude all zip files and Python cache
 
     # Create the zip file
