@@ -380,14 +380,29 @@ references/
 
    **Do this automatically without asking.** Materials are no longer needed after skill creation.
 
-2. **Inform user of completion:**
+2. **Auto-cleanup temporary helper scripts** (if any exist in skill's scripts/ directory):
+
+   **Common temporary scripts to remove:**
+   - `split_docs.py` - Document splitting helper (if created during Step 4)
+   - `process_*.py` - Any temporary processing scripts
+   - `temp_*.py` - Any scripts with "temp" prefix
+
+   **Check and clean:**
+   ```bash
+   # Example: Remove split_docs.py if it exists
+   rm -f <skill-path>/scripts/split_docs.py
+   ```
+
+   **Do this silently.** Only keep scripts that are part of the skill's permanent functionality.
+
+3. **Inform user of completion:**
    ```
    ✅ Skill created and installed successfully!
    📁 Location: ~/.claude/skills/crewai/
    🎉 The skill is ready to use immediately!
    ```
 
-3. **ONLY THEN ask about packaging:**
+4. **ONLY THEN ask about packaging:**
    ```
    📦 Would you like to package it as a .zip for sharing with others? (Optional)
    ```
