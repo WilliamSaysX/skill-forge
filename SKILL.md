@@ -314,6 +314,43 @@ scripts/init_skill.py <skill-name> --path <user-chosen-path>
 2. Delete unused example files from initialization
 3. May require user input (e.g., brand assets, documentation)
 
+**🆕 Smart Processing for Large Documentation Files:**
+
+If documentation was fetched (especially via llms.txt), check file size:
+
+```bash
+# Check if documentation file is large
+ls -lh <path-to-fetched-docs>
+```
+
+**For large files (>50KB or >10,000 words):**
+
+Split into logical sections following Progressive Disclosure principle:
+
+**Example Structure:**
+```
+references/
+├── overview.md          # High-level concepts, getting started
+├── core-concepts.md     # Main ideas, architecture
+├── api-reference.md     # API documentation
+└── advanced.md          # Advanced usage, examples
+```
+
+**Splitting Strategy:**
+1. Read the large markdown file
+2. Identify natural sections (based on headings, topics)
+3. Split into 3-5 focused files (each <20KB)
+4. Name files descriptively (overview, api, examples, etc.)
+5. Update SKILL.md to reference specific files
+
+**Benefits:**
+- ✅ Faster context loading (load only needed sections)
+- ✅ Better grep-ability (search specific files)
+- ✅ Follows Progressive Disclosure design
+
+**For small files (<50KB):**
+- Keep as single file in `references/`
+
 **Update SKILL.md:**
 
 **Writing Style:** Use **imperative/infinitive form** (verb-first), not second person.
@@ -329,23 +366,37 @@ scripts/init_skill.py <skill-name> --path <user-chosen-path>
 
 📖 See [workflow-guide.md#step-4](references/workflow-guide.md#step-4-edit-the-skill) for writing guidelines and examples.
 
-### Step 5: Packaging a Skill (Optional - For Sharing Only)
+### Step 5: Completion and Optional Packaging
 
-**Important:** After Step 4, the skill is already installed and ready to use! Packaging is only needed if the user wants to share it with others.
+**CRITICAL:** After Step 4, the skill is already installed and ready to use!
 
-**When to Offer Packaging:**
+**Required Actions After Step 4:**
 
-After completing Step 4, inform the user:
+1. **Auto-cleanup temporary materials** (if materials exist):
+   ```bash
+   # Silently clean up temp-materials - user doesn't need to know
+   scripts/cleanup_materials.py <skill-name>
+   ```
 
-```
-✅ Skill created and installed successfully!
-📁 Location: ~/.claude/skills/crewai/
-🎉 The skill is ready to use immediately!
+   **Do this automatically without asking.** Materials are no longer needed after skill creation.
 
-📦 Would you like to package it as a .zip for sharing with others? (Optional)
-```
+2. **Inform user of completion:**
+   ```
+   ✅ Skill created and installed successfully!
+   📁 Location: ~/.claude/skills/crewai/
+   🎉 The skill is ready to use immediately!
+   ```
 
-**Only package if user confirms they want to share.**
+3. **ONLY THEN ask about packaging:**
+   ```
+   📦 Would you like to package it as a .zip for sharing with others? (Optional)
+   ```
+
+**⚠️ DO NOT package automatically - must ask user first!**
+
+---
+
+**If user wants to package (optional):**
 
 **Goal:** Validate and package skill into distributable .zip file for sharing.
 
@@ -364,37 +415,17 @@ scripts/package_skill.py <path/to/skill-folder> ./dist
 
 **After Packaging:**
 
-Proactively inform user and suggest cleanup:
-
 ```
 ✅ Skill packaged successfully!
 📦 Package: ~/.claude/skills/crewai/crewai.zip
 📁 Installed: ~/.claude/skills/crewai/ (ready to use)
-📁 Source materials: ~/skill-materials/crewAI/ (245 MB) [global mode]
-
-💡 Clean up materials:
-   scripts/cleanup_materials.py crewAI
 ```
 
-**Cleanup Commands:**
-```bash
-scripts/cleanup_materials.py              # Interactive mode
-scripts/cleanup_materials.py <name>       # Delete specific
-scripts/cleanup_materials.py --list       # List all materials
-scripts/cleanup_materials.py --all        # Delete all (with confirm)
-```
+---
 
-**When to clean:**
-- Skill complete and tested
-- Materials large (>500 MB)
-- Can easily re-fetch later
+**Note:** Temporary materials are automatically cleaned up after skill creation. Users don't need to manually manage cleanup.
 
-**When to keep:**
-- Planning to iterate soon
-- Materials have additional context
-- Working on multiple versions
-
-📖 See [workflow-guide.md#step-5](references/workflow-guide.md#step-5-packaging-a-skill) and [path-management.md](references/path-management.md) for detailed cleanup strategies.
+📖 See [workflow-guide.md#step-5](references/workflow-guide.md#step-5-packaging-a-skill) and [path-management.md](references/path-management.md) for detailed workflow documentation.
 
 ### Step 6: Iterate
 
