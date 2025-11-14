@@ -179,4 +179,4 @@ If you find Skill Forge helpful and would like to:
 *   Connect with a group of peers who are also at the forefront of exploring AI applications;
 You are welcome to join my private community, "William's AI Club," and ignite the fire of AI with hundreds of fellow explorers.
 
-![William's AI Club Community](assets/zsxq_qrcode.JPG)
+<img src="assets/zsxq_qrcode.JPG" alt="William's AI Club Community" width="400"/>

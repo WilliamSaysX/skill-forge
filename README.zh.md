@@ -179,4 +179,4 @@ skill-forge 智能管理路径：
 *   结识一群同样走在 AI 应用探索前沿的伙伴；
 欢迎加入我的知识星球【威廉的 AI Club】，与数百位走在 AI 应用探索前沿的伙伴们一起，用 AI 点燃心火。
 
-![威廉的 AI Club 知识星球](assets/zsxq_qrcode.JPG)
+<img src="assets/zsxq_qrcode.JPG" alt="威廉的 AI Club 知识星球" width="400"/>
