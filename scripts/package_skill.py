@@ -64,10 +64,10 @@ def package_skill(skill_path, output_dir=None):
 
     zip_filename = output_path / f"{skill_name}.zip"
 
-    # Files to exclude from packaging (GitHub-specific files)
-    exclude_files = {'README.md', 'README.zh.md', 'LICENSE.txt', '.gitignore', '.git', '.DS_Store'}
-    exclude_dirs = {'__pycache__', 'github-assets'}  # Exclude Python cache and GitHub-only assets
-    exclude_extensions = {'.zip', '.pyc'}  # Exclude all zip files and Python cache
+    # Whitelist: Only package Skills-standard components
+    # Skills structure: SKILL.md + scripts/ + references/ + assets/
+    allowed_paths = {'scripts', 'references', 'assets'}
+    allowed_files = {'SKILL.md'}
 
     # Create the zip file
     try:
@@ -75,17 +75,28 @@ def package_skill(skill_path, output_dir=None):
             # Walk through the skill directory
             for file_path in skill_path.rglob('*'):
                 if file_path.is_file():
-                    # Skip excluded files, extensions, and directories
-                    if (file_path.name in exclude_files or
-                        file_path.suffix in exclude_extensions or
-                        any(parent.name in exclude_files or parent.name in exclude_dirs for parent in file_path.parents)):
-                        print(f"  Skipped: {file_path.relative_to(skill_path.parent)}")
-                        continue
+                    # Get the relative path from skill directory
+                    rel_path = file_path.relative_to(skill_path)
 
-                    # Calculate the relative path within the zip
-                    arcname = file_path.relative_to(skill_path.parent)
-                    zipf.write(file_path, arcname)
-                    print(f"  Added: {arcname}")
+                    # Check if this file should be included
+                    should_include = False
+
+                    # Check if it's SKILL.md
+                    if rel_path.name == 'SKILL.md' and len(rel_path.parts) == 1:
+                        should_include = True
+                    # Check if it's in allowed directories
+                    elif len(rel_path.parts) > 0 and rel_path.parts[0] in allowed_paths:
+                        # Skip Python cache files
+                        if '__pycache__' not in rel_path.parts and not file_path.name.endswith('.pyc'):
+                            should_include = True
+
+                    if should_include:
+                        # Calculate the relative path within the zip
+                        arcname = file_path.relative_to(skill_path.parent)
+                        zipf.write(file_path, arcname)
+                        print(f"  Added: {arcname}")
+                    else:
+                        print(f"  Skipped: {file_path.relative_to(skill_path.parent)}")
 
         print(f"\n✅ Successfully packaged skill to: {zip_filename}")
         return zip_filename
