@@ -1,0 +1,14 @@
+This product includes software developed by Anthropic, PBC.
+Portions of this software are licensed under the Apache License, Version 2.0.
+The original software this work is based on is skill-creator.
+
+==========================================================================
+
+Copyright 2025 William Cui
+
+This software is a derivative work of skill-creator, licensed under the Apache License, Version 2.0.
+I have made the following modifications:
+- Added multi-source support (documentation sites, PDF, local files).
+- Implemented smart source detection and llms.txt support.
+- Developed intelligent path management and cleanup tools.
+- And other enhancements.
